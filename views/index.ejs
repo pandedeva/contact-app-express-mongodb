@@ -1,0 +1,18 @@
+<h1>Webserver NodeJs</h1>
+<!-- menggunakan data nama dari app.js -->
+<h2>Hello <%= nama %></h2>
+
+<h3>Daftar mahasiswa</h3>
+<!-- kalau data mahasiswa nya kosong -->
+<% if (mahasiswa.length === 0) { %>
+<p>Data Mahasiswa Masih Kosong.</p>
+<% } else { %>
+<!-- harus di foreach agar mau muncul semua object arraynya -->
+<% mahasiswa.forEach(mhs => { %>
+<ul>
+  <li><%= mhs.nama %></li>
+  <li><%= mhs.email %></li>
+</ul>
+<% }) %>
+<!-- tutup else nya -->
+<% } %>
